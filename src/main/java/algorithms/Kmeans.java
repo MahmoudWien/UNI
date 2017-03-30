@@ -25,7 +25,7 @@ public class Kmeans {
     private GaussianGen gaussiangenerator;
     private int stdDeviation=6;
     private int average = 5;
-    private ArrayList<Point> points ;
+    private ArrayList<Point> points;
 
     public Kmeans (int k, int n , int d){
         this.clusterListe = new ArrayList<Cluster>();
