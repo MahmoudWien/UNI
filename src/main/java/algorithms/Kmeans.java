@@ -189,9 +189,9 @@ public class Kmeans {
     }
 
     private void calculateCentroids() {
-        ArrayList<Double> summe = new ArrayList<Double>();
-        ArrayList<Double> coord = new ArrayList<Double>();
+        ArrayList<Double> summe ;
         for(Cluster cluster : clusterListe) {
+            summe = new ArrayList<Double>();
             for(int i =0; i<cluster.getCentroid().getCoordinates().size();i++){
                 summe.add(0.0);
             }
@@ -205,9 +205,9 @@ public class Kmeans {
                 for(int i=0; i<summe.size(); i++){
                     double x = summe.get(i)+point.getCoordinates().get(i);
                     summe.set(i,x);
-               }
-               // sumX += point.getCoordinates().get(0);
-              //  sumY += point.getCoordinates().get(1);
+                }
+                // sumX += point.getCoordinates().get(0);
+                //  sumY += point.getCoordinates().get(1);
             }
 
             Point centroid = cluster.getCentroid();
@@ -215,9 +215,8 @@ public class Kmeans {
                 for(int i=0; i<summe.size();i++){
                     double x = summe.get(i) /n_points;
                     summe.set(i,x);
-                    coord.add(i,x);
                 }
-                centroid.setCoordinates(coord);
+                centroid.setCoordinates(summe);
             }
         }
     }
