@@ -202,7 +202,7 @@ public class Kmeans {
             int n_points = list.size();
 
             for(Point point : list) {
-                for(int i=0; i<point.getCoordinates().size(); i++){
+                for(int i=0; i<summe.size(); i++){
                     double x = summe.get(i)+point.getCoordinates().get(i);
                     summe.set(i,x);
                }
