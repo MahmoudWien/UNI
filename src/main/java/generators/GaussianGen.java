@@ -47,7 +47,8 @@ public class GaussianGen{
     }
 
     public void setDIMENSION(Integer DIMENSION) {
-        this.DIMENSION = this.DIMENSION == null ? DIMENSION : this.DIMENSION;
+        if(DIMENSION >0)
+            this.DIMENSION = DIMENSION;
     }
 
     public Point generatePoint(int stdDeviation, int average) {

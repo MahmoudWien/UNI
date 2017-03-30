@@ -1,5 +1,5 @@
 /**
- * 
+ * Source @http://www.dataonfocus.com/k-means-clustering-java-code/
  */
 package algorithms;
 
@@ -11,7 +11,7 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 /**
- * @author Markus,Ibrahim
+ * @author Axinya,Ibrahim
  *
  */
 public class Kmeans {
@@ -34,6 +34,7 @@ public class Kmeans {
         this.NUM_POINTS = n;
         this.DIMENSION = d;
         this.gaussiangenerator = new GaussianGen(MIN_COORDINATE,MAX_COORDINATE);
+        this.gaussiangenerator.setDIMENSION(d);
     }
 
     public int getNUM_CLUSTERS() {
@@ -102,7 +103,6 @@ public class Kmeans {
     protected void iniClustersCenter(){
         for(int i=0; i<this.clusterListe.size(); i++){
             this.clusterListe.get(i).setCentroid(gaussiangenerator.generatePoint(stdDeviation,average));
-            //this.clusterListe.get(i).plotCluster();
         }
     }
 
@@ -196,8 +196,6 @@ public class Kmeans {
                 summe.add(0.0);
             }
 
-            //double sumX = 0;
-            //double sumY = 0;
             ArrayList<Point> list = cluster.getPoints();
             int n_points = list.size();
 
@@ -206,8 +204,7 @@ public class Kmeans {
                     double x = summe.get(i)+point.getCoordinates().get(i);
                     summe.set(i,x);
                 }
-                // sumX += point.getCoordinates().get(0);
-                //  sumY += point.getCoordinates().get(1);
+
             }
 
             Point centroid = cluster.getCentroid();
