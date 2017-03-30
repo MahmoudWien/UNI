@@ -6,7 +6,7 @@ import algorithms.Kmeans;
 public class Test {
 
     public static void main(String[] args) {
-        Kmeans kmeans = new Kmeans(3,10,2);
+        Kmeans kmeans = new Kmeans(5,100,3);
         kmeans.init();
         kmeans.calculate();
     }
